@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AniStream</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <span class="site-name" id="homeBtn">AniStream</span>
+    <span class="search-btn">🔍</span>
+  </header>
+
+  <!-- SEARCH OVERLAY -->
+  <div class="search-overlay hidden" id="searchOverlay">
+    <div class="search-header">
+      <input id="searchInput" placeholder="Search anime..." />
+      <button id="closeSearch">✖</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+
+  <!-- HOME -->
+  <section class="section" id="homeSection">
+    <h2>Trending</h2>
+    <div class="cards" id="animeList"></div>
+  </section>
+
+  <!-- DETAIL PAGE -->
+  <section class="detail hidden" id="detailPage">
+    <div class="detail-top">
+      <button class="back-btn" id="backBtn">←</button>
+      <span class="detail-logo">AniStream</span>
+    </div>
+
+    <div class="detail-main">
+      <img id="detailPoster" />
+      <div class="detail-text">
+        <h1 id="detailTitle"></h1>
+        <div class="detail-meta" id="detailMeta"></div>
+      </div>
+    </div>
+
+    <p class="detail-desc" id="detailDesc"></p>
+
+    <h3 class="episode-title">Episodes</h3>
+    <div class="episode-list" id="episodeList"></div>
+  </section>
+
+</body>
+</html>
