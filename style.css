@@ -1,0 +1,180 @@
+:root {
+  --accent: #3b82f6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+/* TOP BAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #0b0b0b;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-name {
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.search-btn {
+  font-size: 18px;
+}
+
+/* HOME */
+.section {
+  padding: 12px 16px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.card {
+  background: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card-title {
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  right: 6px;
+  font-size: 12px;
+}
+
+/* SEARCH */
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 200;
+  padding: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+.search-header {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.search-header input {
+  flex: 1;
+  padding: 10px;
+  background: #111;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.search-header button {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 18px;
+}
+
+.search-results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* DETAIL PAGE */
+.detail {
+  padding: 12px 16px;
+}
+
+.detail-top {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 18px;
+}
+
+.detail-logo {
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.detail-main {
+  display: flex;
+  gap: 14px;
+}
+
+.detail-main img {
+  width: 120px;
+  border-radius: 8px;
+}
+
+.detail-text h1 {
+  font-size: 18px;
+}
+
+.detail-meta {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 6px;
+}
+
+.detail-desc {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* EPISODES */
+.episode-title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.episode-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.episode {
+  background: #111;
+  border-radius: 6px;
+  padding: 8px 0;
+  text-align: center;
+  font-size: 13px;
+  border: 1px solid #1f1f1f;
+}
