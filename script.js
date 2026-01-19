@@ -11,6 +11,11 @@ const episodeList = document.getElementById("episodeList");
 const backBtn = document.getElementById("backBtn");
 const homeBtn = document.getElementById("homeBtn");
 
+const watchPage = document.getElementById("watchPage");
+const watchBack = document.getElementById("watchBack");
+const watchTitle = document.getElementById("watchTitle");
+const watchEpisodeList = document.getElementById("watchEpisodeList");
+
 
 /* LOAD HOME ANIME */
 fetch("https://api.jikan.moe/v4/top/anime?limit=12")
@@ -56,6 +61,7 @@ homeBtn.addEventListener("click", () => {
 /* EPISODES */
 function loadEpisodes(id) {
   episodeList.innerHTML = "Loading episodes...";
+  watchEpisodeList.innerHTML = "";
 
   fetch(`https://api.jikan.moe/v4/anime/${id}/episodes`)
     .then(res => res.json())
@@ -68,10 +74,18 @@ function loadEpisodes(id) {
       }
 
       data.data.forEach(ep => {
-        const el = document.createElement("div");
-        el.className = "episode";
-        el.textContent = ep.mal_id;
-        episodeList.appendChild(el);
+        const epBtn = document.createElement("div");
+        epBtn.className = "episode";
+        epBtn.textContent = `EP ${ep.mal_id}`;
+
+        epBtn.onclick = () => openWatch(ep.mal_id, id);
+
+        episodeList.appendChild(epBtn);
+
+        // also add to watch page list
+        const watchEp = epBtn.cloneNode(true);
+        watchEp.onclick = () => openWatch(ep.mal_id, id);
+        watchEpisodeList.appendChild(watchEp);
       });
     })
     .catch(() => {
@@ -123,4 +137,15 @@ searchInput.addEventListener("input", () => {
         });
       });
   }, 400);
+});
+function openWatch(epNumber, animeId) {
+  detailPage.classList.add("hidden");
+  watchPage.classList.remove("hidden");
+
+  watchTitle.textContent = `Episode ${epNumber}`;
+}
+
+watchBack.addEventListener("click", () => {
+  watchPage.classList.add("hidden");
+  detailPage.classList.remove("hidden");
 });
