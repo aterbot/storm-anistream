@@ -11,8 +11,6 @@ const episodeList = document.getElementById("episodeList");
 const backBtn = document.getElementById("backBtn");
 const homeBtn = document.getElementById("homeBtn");
 
-const landingPage = document.getElementById("landingPage");
-const enterBtn = document.getElementById("enterBtn");
 
 /* LOAD HOME ANIME */
 fetch("https://api.jikan.moe/v4/top/anime?limit=12")
@@ -125,7 +123,4 @@ searchInput.addEventListener("input", () => {
         });
       });
   }, 400);
-});
-enterBtn.addEventListener("click", () => {
-  landingPage.style.display = "none";
 });
