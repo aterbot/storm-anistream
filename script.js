@@ -46,7 +46,7 @@ const detailPoster = document.getElementById("detailPoster");
 const detailTitle = document.getElementById("detailTitle");
 const detailDesc = document.getElementById("detailDesc");
 
-const ytPlayer = document.getElementById("ytPlayer");
+let ytPlayer;
 const watchTitle = document.getElementById("watchTitle");
 
 const backBtn = document.getElementById("backBtn");
@@ -105,7 +105,8 @@ function openDetail(anime) {
 function openWatch(anime, episode) {
   watchTitle.textContent = `${anime.title} - ${episode.title}`;
 
-  ytPlayer.src = `https://www.youtube.com/embed/${episode.youtubeId}?autoplay=1`;
+  ytPlayer = document.getElementById("ytPlayer");
+ytPlayer.src = `https://www.youtube.com/embed/${episode.youtubeId}?autoplay=1`;
 
   watchEpisodeList.innerHTML = "";
   anime.episodes.forEach(ep => {
